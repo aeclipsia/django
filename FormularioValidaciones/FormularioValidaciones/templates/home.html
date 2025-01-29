@@ -1,0 +1,23 @@
+{%extends 'base.html' %} {%block titulo %} Indicanos tu problema {%endblock%} {%block subtitulo%}Nos pondremos en contacto contigo{%endblock%} {%block contenido %}
+<form action="" method="POST">
+    <div class="form-group">
+        <label>Email *</label>{{form.email.errors}}
+        <div class="input-group">{{form.email}}</div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Tipo Incidencia *</label>
+        <div class="input-group">{{form.incidencia}}</div>
+    </div>
+    <div class="form-group">
+
+        <label>Mensaje *</label> {{form.mensaje.errors}}
+        <div class="input-group">{{form.mensaje}}</div>
+    </div>
+    <br>
+    <center>
+        <input type="submit" class="btn btn-success btn-lg" value="Aceptar">
+    </center>
+    </div>
+</form>
+{%endblock%}
