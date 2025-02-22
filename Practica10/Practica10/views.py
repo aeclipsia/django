@@ -8,9 +8,7 @@ def index(request):
         form=Formulario(request.POST)
         if form.is_valid():
             collection=form.cleaned_data
-            
             countAficiones=len(collection["aficiones"])
-            
             if countAficiones==0:
                 mensaje="Eres un soso"
             elif countAficiones==1:
@@ -20,9 +18,7 @@ def index(request):
                 mensaje=collection["nombre"]+" creo que tienes demasiadas aficiones"
             else:
                 mensaje=""
-                
             context={"collection":collection,"mensaje":mensaje}
-            
             return render(request,'details.html',context)
     else:
         form=Formulario()
